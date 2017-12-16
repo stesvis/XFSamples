@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XFSamples.Views.MainPage"
+             Title="{Binding Title}">
+
+    <!--<StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Label Text="Welcome to Xamarin Forms and Prism!" />
+    </StackLayout>-->
+
+    <StackLayout Orientation="Vertical"
+                 HorizontalOptions="FillAndExpand"
+                 VerticalOptions="FillAndExpand">
+
+        <!--<SearchBar Text="{Binding SearchText}"
+                   Placeholder="Search"
+                   SearchCommand="{Binding SearchCommand}"
+                   HeightRequest="50"/>-->
+
+        <ListView ItemsSource="{Binding Images}">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell Text="{Binding Title}"
+                               TextColor="Black"
+                               ImageSource="{Binding Url}">
+                    </ImageCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+
+</ContentPage>
